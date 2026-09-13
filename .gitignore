@@ -1,0 +1,14 @@
+# Neovim runtime/state
+nvim/data/
+nvim/state/
+nvim/.lazy.lua
+nvim/.lazy.lock.json
+
+# Editor backups
+*.swp
+*.swo
+*~
+
+# OS junk
+.DS_Store
+Thumbs.db
