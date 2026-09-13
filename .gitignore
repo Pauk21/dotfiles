@@ -2,7 +2,7 @@
 nvim/data/
 nvim/state/
 nvim/.lazy.lua
-nvim/.lazy.lock.json
+nvim/.lazy-lock.json
 
 # Editor backups
 *.swp
