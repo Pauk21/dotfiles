@@ -24,16 +24,6 @@ end
 
 vim.opt.rtp:prepend(lazypath)
 
---basic editor options
-vim.opt.number = true
-vim.opt.relativenumber = true
-vim.opt.termguicolors = true
-
--- set leader key to spacebar
-vim.g.mapleader = " "
-vim.g.maplocalleader = " "
-vim.keymap.set({ "n", "v" }, "<Space>", "<Nop>", { silent = true })
-
 -- Lazy setup da loada sve plugine iz plugin foldera
 require("lazy").setup({
 	spec = {
