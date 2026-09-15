@@ -27,3 +27,23 @@ vim.opt.splitbelow = true
 -- Scrolling & performance
 vim.opt.scrolloff = 8
 vim.opt.updatetime = 250
+
+
+-- Auto open neo-tree instead off netrw
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
+
+vim.api.nvim_create_autocmd("VimEnter", {
+    group = vim.api.nvim_create_augroup("NeotreeAutoOpen", { clear = true }),
+    desc = "Open Neotree when starting with a directory",
+    once = true,
+    callback = function()
+        if vim.fn.argc() > 0 then
+            local arg = vim.fn.argv(0)
+            local stat = vim.uv.fs_stat(arg)
+            if stat and stat.type == "directory" then
+                vim.cmd("Neotree show")
+            end
+        end
+    end,
+})
